@@ -18,6 +18,7 @@
 
 namespace ultralight {
 
+//오류	C2894	템플릿에 'C' 링크가 있도록 선언할 수 없습니다.
 namespace detail {
   template<int> struct selector;
   template<> struct selector<4> { typedef char16_t Char16; };

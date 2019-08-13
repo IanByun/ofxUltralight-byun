@@ -43,6 +43,7 @@ public:
   String8& operator+=(const String8& other);
 
   // Concatenation operator
+  //오류	C2526	'ultralight::operator +': C 링크 함수는 C++ 클래스 'ultralight::String8'을(를) 반환할 수 없습니다.
   inline friend String8 operator+(String8 lhs, const String8& rhs) { lhs += rhs; return lhs; }
 
   // Get raw UTF-8 data
