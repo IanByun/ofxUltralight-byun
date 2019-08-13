@@ -12,9 +12,9 @@
 /// Copyright (C) 2019 Ultralight, Inc. All rights reserved.
 ///
 #pragma once
-#include "Defines.h"
-#include "KeyCodes.h"
-#include "String.h"
+#include <Ultralight/Defines.h>
+#include <Ultralight/KeyCodes.h>
+#include <Ultralight/String.h>
 #ifdef __OBJC__
 #import <AppKit/NSEvent.h>
 #endif

@@ -12,9 +12,9 @@
 /// Copyright (C) 2019 Ultralight, Inc. All rights reserved.
 ///
 #pragma once
-#include "Defines.h"
+#include <Ultralight/Defines.h>
 #include <memory.h>
-#include <cma.h>
+#include <cmath>
 #include <algorithm>
 
 namespace ultralight {
