@@ -32,6 +32,8 @@ protected:
 	vector<ViewAsset> assets;
 
 public:
+	typedef shared_ptr<ofxUltralight> Ptr;
+
 	const vector<ViewRequest>& getViewRequests() {
 		return requests;
 	}

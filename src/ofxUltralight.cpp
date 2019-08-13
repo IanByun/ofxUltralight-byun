@@ -32,7 +32,7 @@ ofxUltralight::ofxUltralight() {
 
 		platform.set_config(config);
 
-		GPUDriver* gpu_driver = gpu_driver = DefaultGPUDriver();
+		GPUDriver* gpu_driver = DefaultGPUDriver();
 		platform.set_gpu_driver(gpu_driver);
 
 		RefPtr<Renderer> renderer = Renderer::Create(); //this overides default config with 'my' config
