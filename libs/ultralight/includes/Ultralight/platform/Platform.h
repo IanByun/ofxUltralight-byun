@@ -1,4 +1,4 @@
-///
+/
 /// @file Platform.h
 ///
 /// @brief The header for the Platform singleton.
@@ -12,7 +12,7 @@
 /// Copyright (C) 2019 Ultralight, Inc. All rights reserved.
 ///
 #pragma once
-#include <Ultralight/Defines.h>
+#include "../Defines.h"
 
 namespace ultralight {
 

@@ -13,14 +13,14 @@
 ///
 #pragma once
 #include <JavaScriptCore/JavaScript.h>
-#include <Ultralight/Defines.h>
-#include <Ultralight/RefPtr.h>
-#include <Ultralight/KeyEvent.h>
-#include <Ultralight/MouseEvent.h>
-#include <Ultralight/ScrollEvent.h>
-#include <Ultralight/RenderTarget.h>
-#include <Ultralight/Bitmap.h>
-#include <Ultralight/Listener.h>
+#include "Defines.h"
+#include "RefPtr.h"
+#include "KeyEvent.h"
+#include "MouseEvent.h"
+#include "ScrollEvent.h"
+#include "RenderTarget.h"
+#include "Bitmap.h"
+#include "Listener.h"
 
 namespace ultralight {
 
@@ -117,7 +117,7 @@ public:
 
   ///
   /// Evaluate a raw string of JavaScript and return results as a native
-  /// JavaScriptCore JSValueRef (@see <JavaScriptCore/JSValueRef.h>)
+  /// JavaScriptCore JSValueRef (@see <JavaScriptCore/JSValueRef.h")
   ///
   /// @note  This is just a wrapper for JSEvaluateScript() in JavaScriptCore
   ///
