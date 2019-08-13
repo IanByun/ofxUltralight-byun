@@ -17,8 +17,8 @@
 #include <Ultralight/UltralightGeometry.h>
 #include <Ultralight/UltralightRenderTarget.h>
 #include <Ultralight/UltralightScrollEvent.h>
-#include <Ultralight/Ultralightplatform/Platform.h>
-#include <Ultralight/Ultralightplatform/Config.h>
-#include <Ultralight/Ultralightplatform/GPUDriver.h>
-#include <Ultralight/Ultralightplatform/FileSystem.h>
-#include <Ultralight/Ultralightplatform/FontLoader.h>
+#include <Ultralight/platform/Platform.h>
+#include <Ultralight/platform/Config.h>
+#include <Ultralight/platform/GPUDriver.h>
+#include <Ultralight/platform/FileSystem.h>
+#include <Ultralight/platform/FontLoader.h>
