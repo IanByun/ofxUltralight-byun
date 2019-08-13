@@ -12,9 +12,9 @@
 /// Copyright (C) 2019 Ultralight, Inc. All rights reserved.
 ///
 #pragma once
-#include <Ultralight/Defines.h>
-#include <Ultralight/Bitmap.h>
-#include <Ultralight/Geometry.h>
+#include <Ultralight/UltralightDefines.h>
+#include <Ultralight/UltralightBitmap.h>
+#include <Ultralight/UltralightGeometry.h>
 
 namespace ultralight {
 

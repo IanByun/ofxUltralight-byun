@@ -872,36 +872,6 @@
 		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\JavaScriptCore\WebKitAvailability.h">
 			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\JavaScriptCore</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Bitmap.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Buffer.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\CAPI.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Defines.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Geometry.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\KeyCodes.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\KeyEvent.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Listener.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Matrix.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\MouseEvent.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\platform\Config.h">
 			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\platform</Filter>
 		</ClInclude>
@@ -917,34 +887,64 @@
 		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\platform\Platform.h">
 			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\platform</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\RefPtr.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Renderer.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\RenderTarget.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\ScrollEvent.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\String.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\String16.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\String32.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\String8.h">
-			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
-		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\Ultralight.h">
 			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\View.h">
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightBitmap.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightBuffer.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightCAPI.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightDefines.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightGeometry.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightKeyCodes.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightKeyEvent.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightListener.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightMatrix.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightMouseEvent.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightRefPtr.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightRenderer.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightRenderTarget.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightScrollEvent.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightString.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightString16.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightString32.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightString8.h">
+			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight\UltralightView.h">
 			<Filter>addons\ofxUltralight-byun\libs\ultralight\includes\Ultralight</Filter>
 		</ClInclude>
 	</ItemGroup>

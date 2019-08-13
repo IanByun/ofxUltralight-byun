@@ -13,10 +13,10 @@
 ///
 #pragma once
 #pragma warning(disable: 4251)
-#include <Ultralight/Defines.h>
-#include <Ultralight/Geometry.h>
-#include <Ultralight/Matrix.h>
-#include <Ultralight/Bitmap.h>
+#include <Ultralight/UltralightDefines.h>
+#include <Ultralight/UltralightGeometry.h>
+#include <Ultralight/UltralightMatrix.h>
+#include <Ultralight/UltralightBitmap.h>
 
 namespace ultralight {
 

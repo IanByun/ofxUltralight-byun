@@ -169,7 +169,7 @@ typedef enum {
  *****************************************************************************/
 
 ///
-/// Create config with default values (see <Ultralight/platform/Config.h>).
+/// Create config with default values (see <Ultralight/Ultralightplatform/Config.h>).
 ///
 ULExport ULConfig ulCreateConfig();
 
@@ -226,7 +226,7 @@ ULExport void ulConfigSetFontFamilySansSerif(ULConfig config,
                                              ULString font_name);
 
 ///
-/// Set user agent string. (See <Ultralight/platform/Config.h> for the default)
+/// Set user agent string. (See <Ultralight/Ultralightplatform/Config.h> for the default)
 ///
 ULExport void ulConfigSetUserAgent(ULConfig config, ULString agent_string);
 

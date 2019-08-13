@@ -12,9 +12,9 @@
 /// Copyright (C) 2019 Ultralight, Inc. All rights reserved.
 ///
 #pragma once
-#include <Ultralight/Defines.h>
-#include <Ultralight/RefPtr.h>
-#include <Ultralight/View.h>
+#include <Ultralight/UltralightDefines.h>
+#include <Ultralight/UltralightRefPtr.h>
+#include <Ultralight/UltralightView.h>
 
 namespace ultralight {
 

@@ -2,7 +2,7 @@
 #include <AppCore/Defines.h>
 #include <JavaScriptCore/JavaScript.h>
 #include <JavaScriptCore/JSStringRef.h>
-#include <Ultralight/String.h>
+#include <Ultralight/UltralightString.h>
 #include <functional>
 #include <vector>
 #include <memory>

@@ -13,8 +13,8 @@
 ///
 #pragma once
 #include "Defines.h"
-#include <Ultralight/RefPtr.h>
-#include <Ultralight/Renderer.h>
+#include <Ultralight/UltralightRefPtr.h>
+#include <Ultralight/UltralightRenderer.h>
 
 namespace ultralight {
 
