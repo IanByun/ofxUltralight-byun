@@ -37,9 +37,9 @@ namespace ultralight {
 	struct ViewAsset {
 		RefPtr<View> view;
 		cv::Mat mat_rgba;	
-		cv::Mat mat_bgr;	//cpu 픽셀
-		ofTexture tex;		//gpu 텍스처
-		GLuint pbo_id[2];	//gpu->cpu 읽기
+		cv::Mat mat_bgr;			//cpu 픽셀
+		shared_ptr<ofTexture> tex;	//gpu texture id 공유 때문에 shared
+		GLuint pbo_id[2];			//gpu->cpu 읽기
 		bool needs_redraw = false; 
 	};
 }
@@ -62,7 +62,9 @@ public:
 		asset.mat_bgr = cv::Mat::zeros(height, width, CV_8UC3);
 		asset.pbo_id[0] = GeneratePBOReader(width, height);
 		asset.pbo_id[1] = GeneratePBOReader(width, height);
-		asset.tex.allocate(width, height, GL_RGB8, ofGetUsingArbTex(), GL_RGBA, GL_UNSIGNED_BYTE);
+		
+		asset.tex = make_shared<ofTexture>(); //gpu texture id 공유 때문에 shared
+		asset.tex->allocate(width, height, GL_RGB8, ofGetUsingArbTex(), GL_RGBA, GL_UNSIGNED_BYTE);
 
 		assets.push_back(asset);
 	}

@@ -74,7 +74,7 @@ void ofxUltralight::update() {
 			GLuint fbo_id = frame_map[render_target.render_buffer_id];
 			GLuint tex_id = texture_map[render_target.texture_id];
 
-			CopyTextureFromFBO(fbo_id, asset.tex);
+			CopyTextureFromFBO(fbo_id, *asset.tex);
 			ReadTextureToPBO(tex_id, asset.pbo_id, asset.mat_rgba);
 			cv::cvtColor(asset.mat_rgba, asset.mat_bgr, cv::COLOR_RGBA2BGR);
 		}

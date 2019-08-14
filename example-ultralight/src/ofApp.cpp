@@ -25,10 +25,10 @@ void ofApp::draw() {
 	auto web_assets = web_loader->getViewAssets();
 
 	if (web_assets.size() == 4) {
-		web_assets[0].tex.draw(0, 0, 960, 540);
-		web_assets[1].tex.draw(960, 0, 960, 540);
-		web_assets[2].tex.draw(0, 540, 960, 540);
-		web_assets[3].tex.draw(960, 540, 960, 540);
+		web_assets[0].tex->draw(0, 0, 960, 540);
+		web_assets[1].tex->draw(960, 0, 960, 540);
+		web_assets[2].tex->draw(0, 540, 960, 540);
+		web_assets[3].tex->draw(960, 540, 960, 540);
 
 		cv::imshow("web_assets[0].mat_bgr", web_assets[0].mat_bgr);
 		cv::imshow("web_assets[1].mat_bgr", web_assets[1].mat_bgr);
