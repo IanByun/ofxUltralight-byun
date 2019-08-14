@@ -34,16 +34,9 @@ void ofApp::draw() {
 		GLint fbo_id = frame_map[render_target.render_buffer_id];
 		GLint tex_id = texture_map[render_target.texture_id];
 
-		if (false) { //easy, naive, slow
-			glBindTexture(GL_TEXTURE_2D, tex_id);
-			glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, (void*)frame_data.data());
-			glBindTexture(GL_TEXTURE_2D, 0);
-		}
-		else {
-			ReadTextureToPBO(tex_id, pbo_id, frame_data);
-		}
-
+		ReadTextureToPBO(tex_id, pbo_id, frame_data);
 		CopyTextureFromFBO(fbo_id, of_tex);
+		
 		of_tex.draw(0, 0, 960, 540);
 
 		cv::Mat bmat = cv::Mat(540, 960, CV_8UC4, (void*)frame_data.data());

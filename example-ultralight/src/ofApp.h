@@ -29,27 +29,29 @@ class ofApp : public ofBaseApp {
 		const std::vector<BYTE> frame_data = std::vector<BYTE>(width * height * 4);
 		
 		GLuint GeneratePBOReader(int width, int height, int numChannels = 4) {
-			int data_size = width*height * numChannels;
+			int data_size = width * height * numChannels;
 			GLuint  pbo;
 			glGenBuffers(1, &pbo);
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo);
-			glBufferData(GL_PIXEL_PACK_BUFFER, width*height * 4, NULL, GL_STREAM_READ);
+			glBufferData(GL_PIXEL_PACK_BUFFER, data_size, NULL, GL_STREAM_READ);
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
 			return pbo;
 		}
 		
 		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT const std::vector<BYTE>& pixel_data) {
+			int data_size = pixel_data.size(); //¾îÂ÷ÇÇ 1byte ¿ø¼Ò
+
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo_id);
 			glBindTexture(GL_TEXTURE_2D, tex_id);
 			glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE,
-				(GLvoid*)0 // offset in bytes into "buffer", not pointer to client memory!
+				(GLvoid*)0 // buffer¿¡¼­ ½ÃÀÛÇÏ´Â byte ´ÜÀ§ offset. cpu memory°¡ ¾Æ´Ï´Ù!
 			);
-			glBufferData(GL_PIXEL_PACK_BUFFER, pixel_data.size(), 0, GL_STREAM_READ); //GL_STREAM_READ ¸»°í GL_STATIC_READ ÇÏ¸é ±ôºý±ôºý!
+			glBufferData(GL_PIXEL_PACK_BUFFER, data_size, 0, GL_STREAM_READ); //GL_STREAM_READ ¸»°í GL_STATIC_READ ÇÏ¸é ±ôºý±ôºý!
 
 			GLubyte* dma_ptr = (GLubyte*)glMapBuffer(GL_PIXEL_PACK_BUFFER, GL_READ_ONLY);
-			if (dma_ptr) { 	// update data directly on the mapped buffer
-				memcpy((void*)pixel_data.data(), dma_ptr, 960 * 540 * 4);
-				glUnmapBuffer(GL_PIXEL_PACK_BUFFER); // release the mapped buffer
+			if (dma_ptr) {
+				memcpy((void*)pixel_data.data(), dma_ptr, data_size);
+				glUnmapBuffer(GL_PIXEL_PACK_BUFFER);
 			}
 			glBindTexture(GL_TEXTURE_2D, 0);
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
@@ -58,12 +60,12 @@ class ofApp : public ofBaseApp {
 		void CopyTextureFromFBO(GLuint fbo_id, OUT const ofTexture& tex) {
 			int tex_id = tex.texData.textureID;
 			int tex_target = tex.texData.textureTarget;
-			int tex_format = tex.texData.glInternalFormat;
-
+			int tex_format = tex.texData.glInternalFormat; //GL_RGB8
+			
 			glBindFramebuffer(GL_FRAMEBUFFER, fbo_id);
 			glBindTexture(tex_target, tex_id);
 			//glCopyTexImage2D(tex_target, 0, tex_format, 0, 0, width, height, 0);
-			glCopyTexSubImage2D(tex_target, 0, 0, 0, 0, 0, width, height);
+			glCopyTexSubImage2D(tex_target, 0, 0, 0, 0, 0, width, height); //sub°¡ ´õ ºü¸£´Ù?
 			glBindTexture(tex_target, 0);
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
