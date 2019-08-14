@@ -168,7 +168,11 @@ namespace ultralight {
 		}
 
 		CHECK_GL();
+		
 		glGenerateMipmap(GL_TEXTURE_2D);
+		CHECK_GL();
+		
+		glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
 		CHECK_GL();
 	}
 
@@ -209,6 +213,7 @@ namespace ultralight {
 			glGenerateMipmap(GL_TEXTURE_2D);
 		}
 
+		glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
 		CHECK_GL();
 	}
 
