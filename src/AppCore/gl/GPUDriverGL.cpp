@@ -1,13 +1,15 @@
+#include <gl/glew.h>
+
 #include "GPUDriverGL.h"
 #include <Ultralight/platform/Platform.h>
 #include <Ultralight/platform/FileSystem.h>
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "../../../shaders/glsl/shader_fill_frag.h"
-#include "../../../shaders/glsl/shader_fill_path_frag.h"
-#include "../../../shaders/glsl/shader_v2f_c4f_t2f_t2f_d28f_vert.h"
-#include "../../../shaders/glsl/shader_v2f_c4f_t2f_vert.h"
+#include "../shaders/glsl/shader_fill_frag.h"
+#include "../shaders/glsl/shader_fill_path_frag.h"
+#include "../shaders/glsl/shader_v2f_c4f_t2f_t2f_d28f_vert.h"
+#include "../shaders/glsl/shader_v2f_c4f_t2f_vert.h"
 
 #define SHADER_PATH "glsl/"
 
