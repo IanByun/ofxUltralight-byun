@@ -30,19 +30,19 @@ void ofApp::draw() {
 	auto texture_map = driver->GetTextureMap();
 
 	if (frame_map.size() != 0) {
-		auto render_target = web_assets[3].view->render_target();
+		auto render_target = web_assets[0].view->render_target();
 		GLint fbo_id = frame_map[render_target.render_buffer_id];
 		GLint tex_id = texture_map[render_target.texture_id];
 
-		ReadTextureToPBO(tex_id, pbo_id, frame_data);
-		CopyTextureFromFBO(fbo_id, of_tex);
+		//ReadTextureToPBO(tex_id, pbo_id, frame_data);
+		//ReadTextureToPBO(tex_id, pbo_id, mat_rgba);
+		//CopyTextureFromFBO(fbo_id, of_tex);
 		
-		of_tex.draw(0, 0, 960, 540);
+		of_tex.draw(0, 0, width, height);
 
-		cv::Mat bmat = cv::Mat(540, 960, CV_8UC4, (void*)frame_data.data());
-		cv::cvtColor(bmat, bmat, cv::COLOR_RGBA2BGR);
+		cv::cvtColor(mat_rgba, mat_bgr, cv::COLOR_RGBA2BGR);
 
-		cv::imshow("ast.mat", bmat);
+		cv::imshow("mat_bgr", mat_bgr);
 		cv::waitKey(1);
 	}
 
