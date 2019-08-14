@@ -11,6 +11,8 @@
 #include "../shaders/glsl/shader_v2f_c4f_t2f_t2f_d28f_vert.h"
 #include "../shaders/glsl/shader_v2f_c4f_t2f_vert.h"
 
+#include <opencv.hpp>
+
 #define SHADER_PATH "glsl/"
 
 #ifdef _DEBUG
@@ -189,6 +191,14 @@ namespace ultralight {
 				const void* pixels = bitmap->LockPixels();
 				glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bitmap->width(), bitmap->height(), 0,
 					GL_BGRA, GL_UNSIGNED_BYTE, pixels);
+				if (false) {
+					auto bmap = bitmap;
+					cv::Mat bmat = cv::Mat(bmap->height(), bmap->width(), CV_8UC4, bmap->raw_pixels());
+					cv::cvtColor(bmat, bmat, cv::COLOR_RGBA2RGB);
+
+					cv::imshow("bmat", bmat);
+					cv::waitKey(33);
+				}
 				bitmap->UnlockPixels();
 			}
 			else {
@@ -214,7 +224,7 @@ namespace ultralight {
 	}
 
 	void GPUDriverGL::CreateRenderBuffer(uint32_t render_buffer_id,
-		const RenderBuffer& buffer) {
+		const RenderBuffer& buffer) { //frame_buffer를 생성하고, 받은 texture를 부착
 		if (render_buffer_id == 0) {
 			INFO("Should not be reached! Render Buffer ID 0 is reserved for default framebuffer.");
 			return;
@@ -232,6 +242,7 @@ namespace ultralight {
 		CHECK_GL();
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, rbuf_texture_id, 0);
 		CHECK_GL();
+		frame_texture_map[frame_buffer_id] = rbuf_texture_id; //fbo와, 부착된 텍스처 연결
 
 		GLenum drawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
 		glDrawBuffers(1, drawBuffers);
@@ -264,7 +275,6 @@ namespace ultralight {
 		GLuint framebuffer_id = frame_buffer_map[render_buffer_id];
 		glDeleteFramebuffers(1, &framebuffer_id);
 	}
-
 
 	void GPUDriverGL::CreateGeometry(uint32_t geometry_id,
 		const VertexBuffer& vertices,
@@ -351,6 +361,25 @@ namespace ultralight {
 		CHECK_GL();
 	}
 
+	/*
+	https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/5.1.framebuffers/framebuffers.cpp
+	
+	단계적으로
+	1. 생성
+	1.1. fbo 생성
+    glGenFramebuffers(1, &framebuffer);
+	
+	1.2. texture 생성 및 fbo에 부착 
+    glGenTextures(1, &textureColorbuffer);
+
+	2. fbo에 그리기
+	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+	3. texture를 화면에 그리기
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
+	*/
+
 	void GPUDriverGL::DrawGeometry(uint32_t geometry_id,
 		uint32_t indices_count,
 		uint32_t indices_offset,
@@ -358,7 +387,7 @@ namespace ultralight {
 		if (programs_.empty())
 			LoadPrograms();
 
-		BindRenderBuffer(state.render_buffer_id);
+		BindRenderBuffer(state.render_buffer_id); //frame buffer에 그리기
 
 		SetViewport(state.viewport_width, state.viewport_height);
 
@@ -368,11 +397,11 @@ namespace ultralight {
 
 		CHECK_GL();
 
-		glBindVertexArray(geometry.vao);
+		glBindVertexArray(geometry.vao);	//텍스처 uv 좌표와 vertex 좌표로 추정
 
 		CHECK_GL();
 
-		BindTexture(0, state.texture_1_id);
+		BindTexture(0, state.texture_1_id); //텍스처 에셋 UpdateTexture imshow 찍어보면 앎
 		BindTexture(1, state.texture_2_id);
 		BindTexture(2, state.texture_3_id);
 

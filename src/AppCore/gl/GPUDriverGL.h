@@ -64,6 +64,10 @@ namespace ultralight {
 
 		virtual bool HasCommandsPending() override { return !command_list.empty(); }
 
+		virtual const std::vector<Command>& GetCommandsPending() { return command_list; }
+
+		virtual const std::map<GLuint, GLuint>& GetFrameBuffer() { return frame_texture_map; }
+
 		virtual void DrawCommandList() override;
 
 		int batch_count() { return batch_count_; }
@@ -85,7 +89,7 @@ namespace ultralight {
 		void SetViewport(float width, float height);
 
 	protected:
-		std::map<int, GLuint> texture_map;
+		std::map<int, GLuint> texture_map; /*<ultra가 내부적으로 관리하는 texture_id, opengl이 생성한 texture_id>*/
 		uint32_t next_texture_id_ = 1;
 		uint32_t next_render_buffer_id_ = 1; // 0 is reserved for default render buffer
 		uint32_t next_geometry_id_ = 1;
@@ -97,7 +101,9 @@ namespace ultralight {
 		};
 		std::map<int, GeometryEntry> geometry_map;
 
-		std::map<int, GLuint> frame_buffer_map;
+		std::map<int, GLuint> frame_buffer_map; /*<ultra가 내부적으로 관리하는 render_buffer_id, opengl이 생성한 frame_buffer_id>*/
+
+		std::map<GLuint, GLuint> frame_texture_map; /*<frame_buffer_map에 들어갈 frame_buffer_id, 부착된 rbuf_texture_id>*/
 
 		struct ProgramEntry {
 			GLuint program_id;
