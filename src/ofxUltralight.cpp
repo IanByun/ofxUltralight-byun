@@ -48,22 +48,6 @@ ofxUltralight::ofxUltralight() {
 }
 
 void ofxUltralight::update() {
-	for (const auto& msg : requests) {
-		ViewAsset asset;
-		asset.view = renderer->CreateView(msg.width, msg.height, false);
-		asset.view->LoadURL(msg.url.c_str());
-
-		asset.mat_rgba = cv::Mat::zeros(msg.height, msg.width, CV_8UC4);
-		asset.mat_bgr = cv::Mat::zeros(msg.height, msg.width, CV_8UC3);
-		asset.pbo_id[0] = GeneratePBOReader(msg.width, msg.height);
-		asset.pbo_id[1] = GeneratePBOReader(msg.width, msg.height);
-		asset.tex.allocate(msg.width, msg.height, GL_RGB8, ofGetUsingArbTex(), GL_RGBA, GL_UNSIGNED_BYTE);
-
-		assets.push_back(asset);
-	}
-
-	requests.clear();
-
 	renderer->Update(); //여기서 아마 web 엔진이 view를 업데이트 하고
 	
 	for (auto& asset : assets) {

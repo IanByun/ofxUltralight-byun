@@ -4,10 +4,10 @@
 void ofApp::setup() {
 	web_loader = make_shared<ofxUltralight>();
 
-	web_loader->requestCreateView(960, 540, "https://m.search.naver.com/search.naver?query=%EB%84%A4%EC%9D%B4%EB%B2%84+%EC%8B%9C%EA%B3%84");
-	web_loader->requestCreateView(960, 540, "https://m.weather.naver.com/m/main.nhn?regionCode=09140104&lang=en");
-	web_loader->requestCreateView(960, 540, "https://www.google.com/search?q=calculator");
-	web_loader->requestCreateView(960, 540, "https://www.apple.com/kr/iphone/");
+	web_loader->createViewAsset(960, 540, "https://m.search.naver.com/search.naver?query=%EB%84%A4%EC%9D%B4%EB%B2%84+%EC%8B%9C%EA%B3%84");
+	web_loader->createViewAsset(960, 540, "https://m.weather.naver.com/m/main.nhn?regionCode=09140104&lang=en");
+	web_loader->createViewAsset(960, 540, "https://www.google.com/search?q=calculator");
+	web_loader->createViewAsset(960, 540, "https://www.apple.com/kr/iphone/");
 	
 	//유튜브는 여전히 안나오는군
 	//web_loader->requestCreateView(960, 540, "https://www.youtube.com/embed/UOxkGD8qRB4?autoplay=1");

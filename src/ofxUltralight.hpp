@@ -45,25 +45,26 @@ namespace ultralight {
 }
 
 class ofxUltralight {
-public:
+protected:
 	shared_ptr<GPUDriver> gpu_driver;
 	RefPtr<Renderer> renderer;
-
-protected:
-	vector<ViewRequest> requests;
 	vector<ViewAsset> assets;
 
 public:
 	typedef shared_ptr<ofxUltralight> Ptr;
 
-	const vector<ViewRequest>& getViewRequests() {
-		return requests;
-	}
+	void createViewAsset(int width, int height, string url) {
+		ViewAsset asset;
+		asset.view = renderer->CreateView(width, height, false);
+		asset.view->LoadURL(url.c_str());
 
-	void requestCreateView(int width, int height, string url) {
-		requests.push_back({
-			width, height, url
-		});
+		asset.mat_rgba = cv::Mat::zeros(height, width, CV_8UC4);
+		asset.mat_bgr = cv::Mat::zeros(height, width, CV_8UC3);
+		asset.pbo_id[0] = GeneratePBOReader(width, height);
+		asset.pbo_id[1] = GeneratePBOReader(width, height);
+		asset.tex.allocate(width, height, GL_RGB8, ofGetUsingArbTex(), GL_RGBA, GL_UNSIGNED_BYTE);
+
+		assets.push_back(asset);
 	}
 
 	const vector<ViewAsset>& getViewAssets() {
