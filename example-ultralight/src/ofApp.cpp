@@ -29,8 +29,8 @@ void ofApp::draw() {
 
 		cv::imshow("web_assets[0].mat_bgr", web_assets[0].mat_bgr);
 		cv::imshow("web_assets[1].mat_bgr", web_assets[1].mat_bgr);
-		/*cv::imshow("web_assets[2].mat_bgr", web_assets[2].mat_bgr);
-		cv::imshow("web_assets[3].mat_bgr", web_assets[3].mat_bgr);*/
+		cv::imshow("web_assets[2].mat_bgr", web_assets[2].mat_bgr);
+		cv::imshow("web_assets[3].mat_bgr", web_assets[3].mat_bgr);
 	}
 	cv::waitKey(1);
 }
