@@ -8,6 +8,9 @@ void ofApp::setup() {
 	web_loader->requestCreateView(960, 540, "https://m.weather.naver.com/m/main.nhn?regionCode=09140104&lang=en");
 	web_loader->requestCreateView(960, 540, "https://www.google.com/search?q=calculator");
 	web_loader->requestCreateView(960, 540, "https://www.apple.com/kr/iphone/");
+	
+	//유튜브는 여전히 안나오는군
+	//web_loader->requestCreateView(960, 540, "https://www.youtube.com/embed/UOxkGD8qRB4?autoplay=1");
 }
 
 //--------------------------------------------------------------
