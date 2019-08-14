@@ -4,6 +4,33 @@
 #include <opencv.hpp>
 #include <ofxUltralight.hpp>
 
+#include <Windows.h>
+#define FATAL(x) { std::stringstream str; \
+  str << "[ERROR] " << __FUNCSIG__ << " @ Line " << __LINE__ << ":\n\t" << x << std::endl; \
+  OutputDebugStringA(str.str().c_str()); \
+  std::cerr << str.str() << std::endl; \
+  /*__debugbreak();*/ }
+
+static inline char const* glErrorString(GLenum const err) noexcept
+{
+	switch (err)
+	{
+		// OpenGL 2.0+ Errors:
+	case GL_NO_ERROR: return "GL_NO_ERROR";
+	case GL_INVALID_ENUM: return "GL_INVALID_ENUM";
+	case GL_INVALID_VALUE: return "GL_INVALID_VALUE";
+	case GL_INVALID_OPERATION: return "GL_INVALID_OPERATION";
+	case GL_STACK_OVERFLOW: return "GL_STACK_OVERFLOW";
+	case GL_STACK_UNDERFLOW: return "GL_STACK_UNDERFLOW";
+	case GL_OUT_OF_MEMORY: return "GL_OUT_OF_MEMORY";
+		// OpenGL 3.0+ Errors
+	case GL_INVALID_FRAMEBUFFER_OPERATION: return "GL_INVALID_FRAMEBUFFER_OPERATION";
+	default: return "UNKNOWN ERROR";
+	}
+}
+
+#define CHECK_GL()  {if (GLenum err = glGetError()) FATAL(glErrorString(err)) }
+
 class ofApp : public ofBaseApp {
 
 	public:
@@ -26,7 +53,7 @@ class ofApp : public ofBaseApp {
 		ofxUltralight::Ptr web_loader;
 
 		const int width = 960, height = 540;
-		const std::vector<BYTE> frame_data = std::vector<BYTE>(width * height * 4);
+		std::vector<BYTE> frame_data = std::vector<BYTE>(width * height * 4);
 		
 		GLuint GeneratePBOReader(int width, int height, int numChannels = 4) {
 			int data_size = width * height * numChannels;
@@ -38,7 +65,7 @@ class ofApp : public ofBaseApp {
 			return pbo;
 		}
 		
-		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT const std::vector<BYTE>& pixel_data) {
+		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT std::vector<BYTE>& pixel_data) {
 			int data_size = pixel_data.size(); //어차피 1byte 원소
 
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo_id);
@@ -57,7 +84,7 @@ class ofApp : public ofBaseApp {
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
 		}
 
-		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT const cv::Mat& pixel_data) {
+		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT cv::Mat& pixel_data) {
 			int data_size = pixel_data.total() * pixel_data.elemSize();
 
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo_id);
@@ -76,22 +103,22 @@ class ofApp : public ofBaseApp {
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
 		}
 
-		void CopyTextureFromFBO(GLuint fbo_id, OUT const ofTexture& tex) {
+		void CopyTextureFromFBO(GLuint fbo_id, OUT ofTexture& tex) {
 			int tex_id = tex.texData.textureID;
 			int tex_target = tex.texData.textureTarget;
-			int tex_format = tex.texData.glInternalFormat; //GL_RGB8
 			
 			glBindFramebuffer(GL_FRAMEBUFFER, fbo_id);
 			glBindTexture(tex_target, tex_id);
-			glCopyTexImage2D(tex_target, 0, tex_format, 0, 0, width, height, 0);
-			//glCopyTexSubImage2D(tex_target, 0, 0, 0, 0, 0, width, height); //sub가 더 빠르다?
+			glCopyTexSubImage2D(tex_target, 0, 0, 0, 0, 0, width, height); //sub가 더 빠르다?
 			glBindTexture(tex_target, 0);
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 
-		const GLuint pbo_id = GeneratePBOReader(width, height);
+		GLuint pbo_id = GeneratePBOReader(width, height);
 
 		ofTexture of_tex;
+		ofImage of_img;
+
 		cv::Mat mat_rgba = cv::Mat::zeros(height, width, CV_8UC4);
 		cv::Mat mat_bgr = cv::Mat::zeros(height, width, CV_8UC3);
 };

@@ -10,11 +10,13 @@ void ofApp::setup() {
 	web_loader->requestCreateView(960, 540, "https://www.apple.com/kr/iphone/");
 
 	of_tex.allocate(width, height, GL_RGB8, ofGetUsingArbTex(), GL_RGBA, GL_UNSIGNED_BYTE);
+
+	of_img.loadImage(R"(C:\Users\junghyun\Pictures\2altered.PNG)");
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-
+	//of_img.update();
 }
 
 //--------------------------------------------------------------
@@ -22,9 +24,10 @@ void ofApp::draw() {
 	ofClear(ofColor::black);
 
 	web_loader->update();
+	CHECK_GL();
 
 	auto web_assets = web_loader->getViewAssets();
-	auto driver = static_cast<GPUDriverGL*>(web_loader->gpu_driver);
+	auto driver = dynamic_pointer_cast<GPUDriverGL>(web_loader->gpu_driver);
 	
 	auto frame_map = driver->GetFrameMap();
 	auto texture_map = driver->GetTextureMap();
@@ -34,10 +37,12 @@ void ofApp::draw() {
 		GLint fbo_id = frame_map[render_target.render_buffer_id];
 		GLint tex_id = texture_map[render_target.texture_id];
 
-		//ReadTextureToPBO(tex_id, pbo_id, frame_data);
-		//ReadTextureToPBO(tex_id, pbo_id, mat_rgba);
-		//CopyTextureFromFBO(fbo_id, of_tex);
+		ReadTextureToPBO(tex_id, pbo_id, mat_rgba);
+		CHECK_GL();
 		
+		CopyTextureFromFBO(fbo_id, of_tex);
+		CHECK_GL();
+
 		of_tex.draw(0, 0, width, height);
 
 		cv::cvtColor(mat_rgba, mat_bgr, cv::COLOR_RGBA2BGR);
@@ -45,7 +50,6 @@ void ofApp::draw() {
 		cv::imshow("mat_bgr", mat_bgr);
 		cv::waitKey(1);
 	}
-
 
 	/*if (web_assets.size() == 4) {
 		web_assets[0].tex.draw(0, 0, 960, 540);

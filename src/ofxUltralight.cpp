@@ -1,15 +1,6 @@
 #include "ofxUltralight.hpp"
 
 ofxUltralight::ofxUltralight() {
-	/*
-	Renderer::Create() 는 자체 opengl context를 만들기 때문에, glut이나 glfw와 renderer->Render()에서 충돌
-	따라서 Renderer::Create()도, renderer->Render()도 main이 아닌 쓰레드에서 실행하고, 픽셀 데이터만 멤버로 공유
-	*/
-	web_thread = std::thread([&]() {
-		
-	});
-	web_thread.detach();
-
 	auto& platform = ultralight::Platform::instance();
 
 	Config config;
@@ -36,10 +27,7 @@ ofxUltralight::ofxUltralight() {
 
 	platform.set_config(config);
 
-	gpu_driver = new GPUDriverGL(1);
-	platform.set_gpu_driver(gpu_driver);
-
-	renderer = Renderer::Create(); //this overides default config with 'my' config
-
-	thread_done = true;
+	gpu_driver = make_shared<GPUDriverGL>(1);
+	platform.set_gpu_driver(gpu_driver.get());
+	renderer = Renderer::Create();
 }
