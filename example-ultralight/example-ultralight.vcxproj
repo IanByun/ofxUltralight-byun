@@ -1,465 +1,466 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup Label="ProjectConfigurations">
-		<ProjectConfiguration Include="Debug|Win32">
-			<Configuration>Debug</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Debug|x64">
-			<Configuration>Debug</Configuration>
-			<Platform>x64</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release|Win32">
-			<Configuration>Release</Configuration>
-			<Platform>Win32</Platform>
-		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release|x64">
-			<Configuration>Release</Configuration>
-			<Platform>x64</Platform>
-		</ProjectConfiguration>
-	</ItemGroup>
-	<PropertyGroup Label="Globals">
-		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
-		<Keyword>Win32Proj</Keyword>
-		<RootNamespace>example-ultralight</RootNamespace>
-	</PropertyGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-		<ConfigurationType>Application</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<PlatformToolset>v140</PlatformToolset>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-		<ConfigurationType>Application</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<PlatformToolset>v140</PlatformToolset>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-		<ConfigurationType>Application</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<WholeProgramOptimization>true</WholeProgramOptimization>
-		<PlatformToolset>v140</PlatformToolset>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-		<ConfigurationType>Application</ConfigurationType>
-		<CharacterSet>Unicode</CharacterSet>
-		<WholeProgramOptimization>true</WholeProgramOptimization>
-		<PlatformToolset>v140</PlatformToolset>
-	</PropertyGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
-	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
-	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-	</ImportGroup>
-	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-	</ImportGroup>
-	<PropertyGroup Label="UserMacros" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-		<OutDir>bin\</OutDir>
-		<IntDir>obj\$(Configuration)\</IntDir>
-		<TargetName>$(ProjectName)_debug</TargetName>
-		<LinkIncremental>true</LinkIncremental>
-		<GenerateManifest>true</GenerateManifest>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-		<OutDir>bin\</OutDir>
-		<IntDir>obj\$(Configuration)\</IntDir>
-		<TargetName>$(ProjectName)_debug</TargetName>
-		<LinkIncremental>true</LinkIncremental>
-		<GenerateManifest>true</GenerateManifest>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-		<OutDir>bin\</OutDir>
-		<IntDir>obj\$(Configuration)\</IntDir>
-		<LinkIncremental>false</LinkIncremental>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<OutDir>bin\</OutDir>
-		<IntDir>obj\$(Configuration)\</IntDir>
-		<LinkIncremental>false</LinkIncremental>
-	</PropertyGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-		<ClCompile>
-			<Optimization>Disabled</Optimization>
-			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
-			<CompileAs>CompileAsCpp</CompileAs>
-		</ClCompile>
-		<Link>
-			<GenerateDebugInformation>true</GenerateDebugInformation>
-			<SubSystem>Console</SubSystem>
-			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);opencv_world411d_32.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32</AdditionalLibraryDirectories>
-		</Link>
-		<PostBuildEvent />
-	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-		<ClCompile>
-			<Optimization>Disabled</Optimization>
-			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
-			<CompileAs>CompileAsCpp</CompileAs>
-			<MultiProcessorCompilation>true</MultiProcessorCompilation>
-		</ClCompile>
-		<Link>
-			<GenerateDebugInformation>true</GenerateDebugInformation>
-			<SubSystem>Console</SubSystem>
-			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);opencv_world411d_64.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64</AdditionalLibraryDirectories>
-		</Link>
-		<PostBuildEvent />
-	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-		<ClCompile>
-			<WholeProgramOptimization>false</WholeProgramOptimization>
-			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
-			<CompileAs>CompileAsCpp</CompileAs>
-			<MultiProcessorCompilation>true</MultiProcessorCompilation>
-		</ClCompile>
-		<Link>
-			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-			<GenerateDebugInformation>false</GenerateDebugInformation>
-			<SubSystem>Console</SubSystem>
-			<OptimizeReferences>true</OptimizeReferences>
-			<EnableCOMDATFolding>true</EnableCOMDATFolding>
-			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);opencv_world411_32.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32</AdditionalLibraryDirectories>
-		</Link>
-		<PostBuildEvent />
-	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<ClCompile>
-			<WholeProgramOptimization>false</WholeProgramOptimization>
-			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
-			<CompileAs>CompileAsCpp</CompileAs>
-		</ClCompile>
-		<Link>
-			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-			<GenerateDebugInformation>false</GenerateDebugInformation>
-			<SubSystem>Console</SubSystem>
-			<OptimizeReferences>true</OptimizeReferences>
-			<EnableCOMDATFolding>true</EnableCOMDATFolding>
-			<RandomizedBaseAddress>false</RandomizedBaseAddress>
-			<AdditionalDependencies>%(AdditionalDependencies);opencv_world411_64.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
-			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64</AdditionalLibraryDirectories>
-		</Link>
-		<PostBuildEvent />
-	</ItemDefinitionGroup>
-	<ItemGroup>
-		<ClCompile Include="src\main.cpp" />
-		<ClCompile Include="src\ofApp.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\gl\GPUDriverGL.cpp" />
-		<ClCompile Include="..\..\..\addons\ofxUltralight-byun\src\ofxUltralight.cpp" />
-	</ItemGroup>
-	<ItemGroup>
-		<ClInclude Include="src\ofApp.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d\calib3d.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d\calib3d_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\affine.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\async.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\base.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\bindings_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\bufferpool.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\check.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\core.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\core_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\block.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\border_interpolate.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\color.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\common.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\datamov_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\color_detail.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\reduce.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\reduce_key_val.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\transform_detail.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\type_traits_detail.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\vec_distance_detail.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\dynamic_smem.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\emulation.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\filters.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\funcattrib.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\functional.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\limits.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\reduce.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\saturate_cast.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\scan.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\simd_functions.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\transform.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\type_traits.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\utility.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_distance.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_math.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_traits.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp_reduce.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp_shuffle.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda.inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda_stream_accessor.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda_types.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvdef.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd.inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd_wrapper.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cv_cpu_dispatch.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cv_cpu_helper.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail\async_promise.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail\exception_ptr.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\directx.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\eigen.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\fast_math.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\hal.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\interface.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_avx.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_avx512.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_cpp.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_forward.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_neon.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_sse.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_sse_em.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_vsx.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\mat.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\mat.inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\matx.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\neon_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ocl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ocl_genbase.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\ocl_defs.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\opencl_info.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\opencl_svm.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_clamdblas.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_clamdfft.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_core.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_core_wrappers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_gl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_gl_wrappers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_clamdblas.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_clamdfft.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_core.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_core_wrappers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_gl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_gl_wrappers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_20.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_definitions.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_hsa_extension.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opengl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\operations.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\optim.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ovx.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\persistence.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\saturate.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\simd_intrinsics.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\softfloat.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\sse_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\traits.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\types.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\types_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utility.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\allocator_stats.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\allocator_stats.impl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\filesystem.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logger.defines.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logger.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logtag.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\trace.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\va_intel.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\version.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\vsx_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\cvconfig.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\all_layers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dict.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dnn.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dnn.inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\layer.details.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\layer.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\shape_utils.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils\inference_engine.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\version.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\features2d.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal\interface.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\allocator.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\all_indices.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\any.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\autotuned_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\composite_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\config.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\defines.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dist.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dummy.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dynamic_bitset.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\flann.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\flann_base.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\general.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\ground_truth.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\heap.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\hierarchical_clustering_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\index_testing.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kdtree_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kdtree_single_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kmeans_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\linear_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\logger.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\lsh_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\lsh_table.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\matrix.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\miniflann.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\nn_index.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\object_factory.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\params.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\random.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\result_set.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\sampling.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\saving.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\simplex_downhill.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\timer.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui\highgui.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui\highgui_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\imgcodecs.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\imgcodecs_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\ios.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy\constants_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail\gcgraph.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal\hal.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal\interface.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\imgproc.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\imgproc_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\types_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml\ml.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml\ml.inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect\detection_based_tracker.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect\objdetect.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\opencv.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\opencv_modules.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\cuda.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy\constants_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\photo.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\autocalib.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\blenders.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\camera.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\exposure_compensate.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\matchers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\motion_estimators.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\seam_finders.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\timelapsers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\util.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\util_inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\warpers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\warpers_inl.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\warpers.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\background_segm.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy\constants_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\tracking.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\video.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\cap_ios.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy\constants_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\registry.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\videoio.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\videoio_c.h" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\world.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\gl\GPUDriverGL.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_fill_frag.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_fill_path_frag.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_v2f_c4f_t2f_t2f_d28f_vert.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_v2f_c4f_t2f_vert.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\ofxUltralight.hpp" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\App.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\AppCore.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\CAPI.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Defines.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\JSHelpers.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Monitor.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Overlay.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Window.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JavaScript.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSBase.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSContextRef.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSObjectRef.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSStringRef.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSTypedArray.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSValueRef.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\WebKitAvailability.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\Config.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\FileSystem.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\FontLoader.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\GPUDriver.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\Platform.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\Ultralight.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightBitmap.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightBuffer.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightCAPI.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightDefines.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightGeometry.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightKeyCodes.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightKeyEvent.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightListener.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightMatrix.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightMouseEvent.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRefPtr.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRenderer.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRenderTarget.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightScrollEvent.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString16.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString32.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString8.h" />
-		<ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightView.h" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
-			<Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
-		</ProjectReference>
-	</ItemGroup>
-	<ItemGroup>
-		<ResourceCompile Include="icon.rc">
-			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-			<AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
-		</ResourceCompile>
-	</ItemGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-	<ProjectExtensions>
-		<VisualStudio>
-			<UserProperties RESOURCE_FILE="icon.rc" />
-		</VisualStudio>
-	</ProjectExtensions>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>example-ultralight</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);opencv_world411d_32.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);opencv_world411d_64.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);opencv_world411_32.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxOpenCv-4.1.1\libs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\Win32\Release;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Debug;..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\includes\GL;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\glew-2.1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\Win32;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64;..\..\..\addons\ofxUltralight-byun\src;..\..\..\addons\ofxUltralight-byun\src\AppCore;..\..\..\addons\ofxUltralight-byun\src\AppCore\gl;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders;..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);opencv_world411_64.lib;AppCore.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\lib\vs\x64\Release;..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\lib\vs\x64</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\gl\GPUDriverGL.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxUltralight-byun\src\ofxUltralight.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d\calib3d.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d\calib3d_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\calib3d.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\affine.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\async.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\base.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\bindings_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\bufferpool.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\check.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\core.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\core_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\block.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\border_interpolate.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\color.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\common.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\datamov_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\color_detail.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\reduce.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\reduce_key_val.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\transform_detail.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\type_traits_detail.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\detail\vec_distance_detail.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\dynamic_smem.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\emulation.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\filters.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\funcattrib.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\functional.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\limits.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\reduce.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\saturate_cast.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\scan.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\simd_functions.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\transform.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\type_traits.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\utility.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_distance.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_math.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\vec_traits.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp_reduce.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda\warp_shuffle.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda.inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda_stream_accessor.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cuda_types.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvdef.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd.inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cvstd_wrapper.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cv_cpu_dispatch.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\cv_cpu_helper.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail\async_promise.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\detail\exception_ptr.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\directx.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\eigen.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\fast_math.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\hal.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\interface.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_avx.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_avx512.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_cpp.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_forward.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_neon.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_sse.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_sse_em.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\hal\intrin_vsx.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\mat.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\mat.inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\matx.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\neon_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ocl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ocl_genbase.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\ocl_defs.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\opencl_info.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\opencl_svm.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_clamdblas.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_clamdfft.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_core.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_core_wrappers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_gl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\autogenerated\opencl_gl_wrappers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_clamdblas.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_clamdfft.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_core.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_core_wrappers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_gl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_gl_wrappers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_20.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_definitions.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opencl\runtime\opencl_svm_hsa_extension.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\opengl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\operations.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\optim.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\ovx.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\persistence.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\saturate.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\simd_intrinsics.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\softfloat.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\sse_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\traits.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\types.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\types_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utility.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\allocator_stats.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\allocator_stats.impl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\filesystem.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logger.defines.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logger.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\logtag.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\utils\trace.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\va_intel.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\version.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core\vsx_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\core.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\cvconfig.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\all_layers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dict.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dnn.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\dnn.inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\layer.details.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\layer.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\shape_utils.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\utils\inference_engine.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn\version.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\dnn.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\features2d.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d\hal\interface.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\features2d.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\allocator.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\all_indices.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\any.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\autotuned_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\composite_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\config.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\defines.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dist.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dummy.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\dynamic_bitset.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\flann.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\flann_base.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\general.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\ground_truth.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\heap.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\hierarchical_clustering_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\index_testing.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kdtree_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kdtree_single_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\kmeans_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\linear_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\logger.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\lsh_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\lsh_table.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\matrix.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\miniflann.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\nn_index.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\object_factory.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\params.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\random.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\result_set.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\sampling.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\saving.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\simplex_downhill.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann\timer.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\flann.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui\highgui.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui\highgui_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\highgui.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\imgcodecs.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\imgcodecs_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\ios.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs\legacy\constants_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgcodecs.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\detail\gcgraph.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal\hal.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\hal\interface.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\imgproc.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\imgproc_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc\types_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\imgproc.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml\ml.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml\ml.inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\ml.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect\detection_based_tracker.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect\objdetect.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\objdetect.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\opencv.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\opencv_modules.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\cuda.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\legacy\constants_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo\photo.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\photo.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\autocalib.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\blenders.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\camera.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\exposure_compensate.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\matchers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\motion_estimators.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\seam_finders.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\timelapsers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\util.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\util_inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\warpers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\detail\warpers_inl.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching\warpers.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\stitching.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\background_segm.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\legacy\constants_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\tracking.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video\video.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\video.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\cap_ios.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\legacy\constants_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\registry.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\videoio.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio\videoio_c.h" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\videoio.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxOpenCv-4.1.1\libs\opencv-4.1.1\includes\opencv2\world.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\gl\GPUDriverGL.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_fill_frag.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_fill_path_frag.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_v2f_c4f_t2f_t2f_d28f_vert.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\AppCore\shaders\glsl\shader_v2f_c4f_t2f_vert.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\src\ofxUltralight.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\App.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\AppCore.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\CAPI.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Defines.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\JSHelpers.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Monitor.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Overlay.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\AppCore\Window.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JavaScript.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSBase.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSContextRef.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSObjectRef.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSStringRef.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSTypedArray.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\JSValueRef.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\JavaScriptCore\WebKitAvailability.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\Config.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\FileSystem.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\FontLoader.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\GPUDriver.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\platform\Platform.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\Ultralight.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightBitmap.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightBuffer.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightCAPI.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightDefines.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightGeometry.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightKeyCodes.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightKeyEvent.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightListener.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightMatrix.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightMouseEvent.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRefPtr.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRenderer.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightRenderTarget.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightScrollEvent.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString16.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString32.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightString8.h" />
+    <ClInclude Include="..\..\..\addons\ofxUltralight-byun\libs\ultralight-1.0\includes\Ultralight\UltralightView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="icon.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

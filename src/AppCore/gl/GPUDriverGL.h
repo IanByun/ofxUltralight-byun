@@ -66,7 +66,11 @@ namespace ultralight {
 
 		virtual const std::vector<Command>& GetCommandsPending() { return command_list; }
 
-		virtual const std::map<GLuint, GLuint>& GetFrameBuffer() { return frame_texture_map; }
+		virtual const std::map<GLuint, GLuint>& GetFrameTextureMap() { return frame_texture_map; }
+
+		virtual const std::map<int, GLuint>& GetTextureMap() { return texture_map; }
+
+		virtual const std::map<int, GLuint>& GetFrameMap() { return frame_buffer_map; }
 
 		virtual void DrawCommandList() override;
 

@@ -24,24 +24,12 @@ class ofApp : public ofBaseApp {
 		void gotMessage(ofMessage msg);
 		
 		ofxUltralight::Ptr web_loader;
-		ofFbo		perspectiveFrame;
-
-		unsigned int quadVAO, quadVBO;
-		vector<float> quadVertices = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
-			// positions   // texCoords
-			0.0f,  500.0f,  0.0f, 1.0f,
-			0.0f, 0.0f,  0.0f, 0.0f,
-			1000.0f, 0.0f,  1.0f, 0.0f,
-
-			0.0f,  500.0f,  0.0f, 1.0f,
-			1000.0f, 0.0f,  1.0f, 0.0f,
-			1000.0f,  500.0f,  1.0f, 1.0f
-		};
 
 		const int width = 960, height = 540;
 		const std::vector<BYTE> frame_data = std::vector<BYTE>(width * height * 4);
 		
-		GLuint GenerateReadPBO(int width, int height) {
+		GLuint GeneratePBOReader(int width, int height, int numChannels = 4) {
+			int data_size = width*height * numChannels;
 			GLuint  pbo;
 			glGenBuffers(1, &pbo);
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo);
@@ -50,7 +38,7 @@ class ofApp : public ofBaseApp {
 			return pbo;
 		}
 		
-		void ReadTexture(GLuint tex_id, GLuint pbo_id, OUT const std::vector<BYTE>& pixel_data) {
+		void ReadTextureToPBO(GLuint tex_id, GLuint pbo_id, OUT const std::vector<BYTE>& pixel_data) {
 			glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo_id);
 			glBindTexture(GL_TEXTURE_2D, tex_id);
 			glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE,
@@ -64,8 +52,23 @@ class ofApp : public ofBaseApp {
 				glUnmapBuffer(GL_PIXEL_PACK_BUFFER); // release the mapped buffer
 			}
 			glBindTexture(GL_TEXTURE_2D, 0);
-			glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0);
+			glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
 		}
 
-		const GLuint pbo_id = GenerateReadPBO(width, height);
+		void CopyTextureFromFBO(GLuint fbo_id, OUT const ofTexture& tex) {
+			int tex_id = tex.texData.textureID;
+			int tex_target = tex.texData.textureTarget;
+			int tex_format = tex.texData.glInternalFormat;
+
+			glBindFramebuffer(GL_FRAMEBUFFER, fbo_id);
+			glBindTexture(tex_target, tex_id);
+			//glCopyTexImage2D(tex_target, 0, tex_format, 0, 0, width, height, 0);
+			glCopyTexSubImage2D(tex_target, 0, 0, 0, 0, 0, width, height);
+			glBindTexture(tex_target, 0);
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+
+		const GLuint pbo_id = GeneratePBOReader(width, height);
+
+		ofTexture of_tex;
 };
