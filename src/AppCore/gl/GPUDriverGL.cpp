@@ -118,7 +118,7 @@ static GLuint LoadShaderFromFile(GLenum shader_type, const char* filename) {
 }
 
 #ifdef _DEBUG
-#define CHECK_GL()  {if (GLenum err = glGetError()) FATAL(glErrorString(err)) }                                                     
+#define CHECK_GL()  {if (GLenum err = glGetError()) FATAL(glErrorString(err)) }
 #else
 #define CHECK_GL()
 #endif   
@@ -389,6 +389,9 @@ namespace ultralight {
 
 		BindRenderBuffer(state.render_buffer_id); //frame buffer에 그리기
 
+		int view_data[4];
+		glGetIntegerv(GL_VIEWPORT, view_data);
+
 		SetViewport(state.viewport_width, state.viewport_height);
 
 		GeometryEntry& geometry = geometry_map[geometry_id];
@@ -411,6 +414,8 @@ namespace ultralight {
 			(GLvoid*)(indices_offset * sizeof(unsigned int)));
 
 		glBindVertexArray(0);
+
+		glViewport(view_data[0], view_data[1], view_data[2], view_data[3]);
 
 		batch_count_++;
 
@@ -446,7 +451,7 @@ namespace ultralight {
 		glEnable(GL_BLEND);
 		glDisable(GL_SCISSOR_TEST);
 		glDisable(GL_DEPTH_TEST);
-		glDepthFunc(GL_NEVER);
+		//glDepthFunc(GL_NEVER);
 		glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
 		CHECK_GL();
@@ -464,6 +469,7 @@ namespace ultralight {
 
 		command_list.clear();
 		glDisable(GL_SCISSOR_TEST);
+		glEnable(GL_DEPTH_TEST);
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
