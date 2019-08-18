@@ -75,5 +75,5 @@ public:
 
 	void update(); //1초간 안부르면 ultralight 타임아웃. 멀티 쓰레딩해야 하나?
 
-	ofxUltralight();
+	ofxUltralight(ultralight::Config* _config = nullptr);
 };

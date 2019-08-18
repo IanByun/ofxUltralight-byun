@@ -2,15 +2,28 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	web_loader = make_shared<ofxUltralight>();
+	//³ª´®°íµñ
+	ultralight_config.font_family_standard = "NanumGothic";
+	ultralight_config.font_family_fixed = "NanumGothicCoding";
+	ultralight_config.font_family_serif = "NanumMyeongjo";
+	ultralight_config.font_family_sans_serif = "NanumBarunGothic";
+
+	//Samsung Browser 7.2 on Android 8.1 Samsung Galaxy S9 Plus 
+	ultralight_config.user_agent = "Mozilla/5.0 (Linux; Android 8.1.0; SM-G965F Build/OPM2.171019.029) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/7.2 Chrome/59.0.3071.125 Mobile Safari/537.36";
+	
+	//PC chrome - many rendering errors
+	//ultralight_config.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36";
+
+	web_loader = make_shared<ofxUltralight>(&ultralight_config);
 
 	web_loader->createViewAsset(regions[0].width, regions[0].height, "https://m.search.naver.com/search.naver?query=%EB%84%A4%EC%9D%B4%EB%B2%84+%EC%8B%9C%EA%B3%84");
-	web_loader->createViewAsset(regions[1].width, regions[1].height, "https://m.weather.naver.com/m/main.nhn?regionCode=09140104&lang=en");
+	//web_loader->createViewAsset(regions[1].width, regions[1].height, "https://m.weather.naver.com/m/main.nhn?regionCode=09140104&lang=en");
+	web_loader->createViewAsset(regions[1].width, regions[1].height, "https://www.apple.com/kr/iphone/");
 	web_loader->createViewAsset(regions[2].width, regions[2].height, "https://www.google.com/search?q=calculator");
-	web_loader->createViewAsset(regions[3].width, regions[3].height, "https://www.apple.com/kr/iphone/");
+	web_loader->createViewAsset(regions[3].width, regions[3].height, "https://www.baidu.com/");
 	
-	//À¯Æ©ºê´Â ¿©ÀüÈ÷ ¾È³ª¿À´Â±º
-	//web_loader->requestCreateView(960, 540, "https://www.youtube.com/embed/UOxkGD8qRB4?autoplay=1");
+	//like Awesomium, YouTube still does not work
+	//web_loader->requestCreateView(regions[3].width, regions[3].height, "https://www.youtube.com/embed/UOxkGD8qRB4?autoplay=1");
 }
 
 //--------------------------------------------------------------

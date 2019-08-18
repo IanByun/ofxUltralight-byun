@@ -25,6 +25,7 @@ class ofApp : public ofBaseApp {
 
 		void mouseScrolled(int x, int y, float scrollX, float scrollY);
 		
+		ultralight::Config ultralight_config;
 		ofxUltralight::Ptr web_loader;
 
 		function<bool(int, int, ofRectangle)> in_range = [](int x, int y, ofRectangle rect)->bool {
