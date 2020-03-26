@@ -4,6 +4,7 @@
 *.sdf
 *.cachefile
 *.VC.db
+.vs/
 
 /*/[Oo]bj/
 /*/[Rr]elease/
