@@ -3,8 +3,7 @@
 
 int main() {
 	ofGLFWWindowSettings main_settings;
-	main_settings.width = 1920;
-	main_settings.height = 1080;
+	main_settings.setSize(1920, 1080);
 	main_settings.windowMode = OF_WINDOW;
 	main_settings.setGLVersion(4, 5);
 	auto mainWindow = ofCreateWindow(main_settings);
